@@ -1,0 +1,21 @@
+.loader{
+    height: 200px;
+    width:200px;
+    border-radius: 50%;
+    border:10px solid black;
+    border-top: 20px solid yellowgreen;
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-direction: normal;
+    animation-delay: 1s;
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

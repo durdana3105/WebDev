@@ -1,0 +1,261 @@
+/* h1{
+    color:red;
+    text-decoration:underline;
+    text-align:center;
+    text-transform:uppercase;
+}
+body{
+    background-color:rgb(209, 212, 145);
+}
+button{
+    background-color:rgb(107, 17, 17);
+    color:#ff0000;
+}
+#hello{
+    color:blue;
+}
+p{
+    text-align:center;
+}
+*{
+    font-family:'Times New Roman', Times, serif;
+}
+#outer{
+    font-size: 25px;
+    border: 1px solid black;
+    border-style: double;
+    border-color: rgb(189, 29, 29);
+    border: 2px solid rgb(189, 29, 29);
+    border-radius: 100%;
+}
+#inner{
+    font-size: 10px;
+} */
+/* #hell{
+    
+    padding:10px;
+    border: 5px solid rgb(240, 14, 14);
+    padding-right: 20px;
+    background-color: rgb(30, 29, 30);
+    
+}
+#sell{
+    border: 2px rgb(216, 81, 173);
+
+}
+#bye{
+    background-color:rgb(207, 135, 27);
+    color:rgb(235, 231, 224);
+}
+a{
+    margin-right:200px;
+    text-decoration:none;
+    color:rgb(230, 232, 236)
+}
+#get{
+    background-color:rgb(33, 32, 32);
+    color:rgb(240, 157, 14);
+}
+.box1{
+    height: 100px;
+    width: 100px;
+    border: 2px solid rgb(29, 26, 26);
+    background-color:rgba(0, 0, 255,0.5);
+    display:inline-block;
+}
+.box2{
+    height: 100px;
+    width: 100px;
+    border: 2px solid rgb(29, 26, 26);
+    background-color:rgba(0, 255, 0,0.5);
+    display:inline-block;
+}
+.box3{
+    height: 100px;
+    width: 100px;
+    border: 2px solid rgb(29, 26, 26);
+    background-color:rgba(255, 0, 0,0.5);
+    display:inline-block;
+}
+footer{
+    text-align:center;
+    background-color:rgb(29, 26, 26);
+    color:rgb(230, 227, 224);
+}
+.why{
+    height: 500px;
+} */
+/* body{
+    background-image: url("bg.jpg");
+    background-size: contain;
+} */
+/* div{
+    height: 100px;
+    width: 100px;
+    background-color:rgb(181, 34, 34);
+    border: 2px solid rgb(29, 26, 26);
+    display:inline-block;
+}
+#box1{
+    position:static;
+}
+#box2{
+    position:relative;
+    top: 50px;
+    left: 50px;
+    background-image: url("bg.jpg");
+    background-size: cover;
+}
+#box3{
+    position:absolute;
+    top: 10px;
+    left: 10px;
+}
+#box4{
+    position:fixed;
+    top: 50px;
+    left: 10px;
+} */
+
+
+/* div{
+    height: 100px;
+    width: 100px;   
+    background-image: url("bg.jpg");
+    background-size: cover;
+    position:fixed;
+    right:0px;
+    top:50px;
+} */
+ /* body{
+    text-align: center;
+}
+
+div{
+    height: 100px;
+    width: 150px;
+    border: 2px solid rgb(29, 26, 26);
+    display:inline-block;
+}
+
+#Container{
+    width: 600px;
+    height: 600px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row; */
+    /* justify-content: flex-end; */
+     /*row as it is same aatey likin starts from other side*/
+     /* justify-content: flex-start; */
+     /* row as it is same aatey likin starts from other side */
+     /* justify-content: center; row as it is same aatey likin starts from other side */
+     /* justify-content: space-between; */
+      /* row ke contents/items ke beechme space ajati and takes all the provided space in the container */
+     /* align-items: center;  */
+     /* cross axis pe center align kar deta hai */
+     /* justify-content: center; */
+     /*if wamt to align items in the center of the container then we can use justify-content: center; and align-items: center; */
+     /* flex-wrap: wrap; */
+     /* agar container ke andar jitne bhi items hai wo ek line me fit nahi ho ra
+he hai to wo automatically next line me chala jayega */
+    /* align-items: center; */
+     /* cross axis pe center align kar deta hai */
+     /* align-content: center; */
+     /* agar container ke andar jitne bhi items hai wo ek line me fit nahi ho rahe hai to wo automatically next line me chala jayega aur un lines ko center align kar dega */
+/* } */
+
+/* #box1{
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+#box2{
+    background-color: rgba(0, 255, 0, 0.5);
+    height: 200px;
+}
+
+#box3{
+    background-color: rgba(255, 0, 0, 0.5);
+    height:75px;
+}
+
+#box4{
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+#box5{
+    background-color: rgba(255, 0, 255, 0.5);
+} */
+
+
+/* #hell{
+    height: 500px;
+    width: 500px;
+    background-color: rgb(187, 27, 187);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#bye{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(27, 27, 187);
+    
+} */
+/* div{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(187, 27, 27);
+}
+@media(max-width:300px){
+   div{
+    background-color: rgb(27, 187, 27);
+   }
+}
+@media(min-width:300px) and (max-width:400px){
+    div{
+        background-color: rgb(211, 77, 144);
+    }
+}
+@media(min-width:400px) and (max-width:600px){
+    div{
+        background-color: rgb(205, 77, 49);
+    }
+}
+@media(min-width:600px){
+    div{
+        background-color: rgb(212, 60, 60);
+    }
+} */
+
+div{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(187, 27, 27);
+    transition-duration: 1s;
+    /* transition-timing-function: ease-in-out;
+    transition-timing-function: linear;
+    transition-timing-function: ease-in;
+    transition-timing-function: ease-out; */
+    /* transition-timing-function: steps(4);
+    transition-delay: 1s;
+     animation-name: mymove;
+    animation-duration: 0.25s; */
+    transform: rotate(360deg);
+    /* animation-iteration-count: infinite; */
+
+}
+
+/* @keyframes mymove{
+    from{background-color: rgb(187, 27, 27);}
+    to{background-color: rgb(203, 224, 15);}
+} */
+div:hover{
+    background-color: rgb(27, 187, 27);
+    animation-name: mymove;
+    animation-duration: 0.25s;
+    
+    animation-iteration-count: infinite;
+}
