@@ -1,5 +1,12 @@
 const { faker } = require('@faker-js/faker');
 const mysql = require('mysql2');
+const express=require("express");
+const app=express();
+const path=require("path");
+
+//for ejs
+app.set("view engine","ejs");
+app.set("views",path.join(__dirname,"/views"));
 
 //connecting mysql with my vs code
 const connection = mysql.createConnection({
@@ -10,29 +17,72 @@ const connection = mysql.createConnection({
 });
 
 
-try{
-connection.query("SHOW TABLES",(err,result)=>
-{
-  if(err) throw err;
-    console.log(result);
-});
-} catch(err){
-  console.log(err)
+//inserting into table
+let q="insert into user (id,username,email,password) values ?";
+// let users=[["123a","123_newuser1","123@gmail.com","123a"],
+// ["123b","123_newuser2","123b@gmail.com","123b"],
+// ["123c","123_newuser3","123c@gmail.com","123c"]
+// ];
+
+
+//to create fake data
+let createRandomUser= ()=> {
+  return [
+     faker.string.uuid(),
+     faker.internet.username(),
+     faker.internet.email(),
+     faker.internet.password(),
+  ];
 }
-connection.end();//to automatically close the server of mysql
+
+//using faker generateing 100 users details
+// let data=[];
+// for(let i=1;i<=100;i++){
+//   data.push(createRandomUser());
+// }
+
+
+// try{
+// connection.query(q,[data],(err,result)=> //users dalna insert keliye aur data for the  100 fake d=users
+// {
+//   if(err) throw err;
+//   console.log(result);
+// });
+// } catch(err){
+//   console.log(err)
+// }
+// connection.end();//to automatically close the server of mysql
 
 
 //to run mysql in our cli-terminal
 //--      {mysql -u root -p}
 
 
-//to create fake data
-let createRandomUser= ()=> {
-  return {
-    id: faker.string.uuid(),
-    username: faker.internet.username(),
-    email: faker.internet.email(),
-    password: faker.internet.password(),
-  };
-}
+
 // console.log(createRandomUser());
+
+
+
+app.get("/",(req,res)=>{
+  let q="select count(*) from user";
+  try{
+connection.query(q,(err,result)=> //users dalna insert keliye aur data for the  100 fake d=users
+{
+  if(err) throw err;
+  let count=result[0]["count(*)"];
+  // console.log(result);
+  res.render("home.ejs",{count});
+});
+} catch(err){
+  console.log(err)
+  res.send("some error in db");
+}
+connection.end();
+
+
+  // res.send("welcome to homepage");
+})
+
+app.listen("8080",()=>{
+  console.log("server is listening to port")
+});
