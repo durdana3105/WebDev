@@ -3,6 +3,9 @@ const mysql = require('mysql2');
 const express=require("express");
 const app=express();
 const path=require("path");
+const methodOverride=require("method-override");
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({extended:true}));
 
 //for ejs
 app.set("view engine","ejs");
@@ -62,7 +65,7 @@ let createRandomUser= ()=> {
 // console.log(createRandomUser());
 
 
-
+//HOME PAGE
 app.get("/",(req,res)=>{
   let q="select count(*) from user";
   try{
@@ -81,6 +84,49 @@ connection.end();
 
 
   // res.send("welcome to homepage");
+})
+
+
+//SHOW PAGE
+app.get('/user',(req,res)=>{
+    let q='select *from user';
+     try{
+connection.query(q,(err,users)=> //users dalna insert keliye aur data for the  100 fake d=users
+{
+  if(err) throw err;
+  // console.log(result);
+  // res.send(result);
+  res.render("users.ejs",{users});
+});
+} catch(err){
+  console.log(err)
+  res.send("some error in db");
+}
+});
+
+
+//EDIT ROUTE
+app.get("/user/:id/edit",(req,res)=>{
+  let {id}=req.params;
+  let q=`select *from user where id='${id}'`;
+
+  try{
+connection.query(q,(err,result)=> //users dalna insert keliye aur data for the  100 fake d=users
+{
+  if(err) throw err;
+  let user=result[0];
+  res.render("edit.ejs",{user});
+});
+} catch(err){
+  console.log(err)
+  res.send("some error in db");
+}
+})
+
+
+//UPDATE (DB) ROUTE
+app.patch("/user/:id",(req,res)=>{
+  
 })
 
 app.listen("8080",()=>{
