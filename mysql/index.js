@@ -126,7 +126,28 @@ connection.query(q,(err,result)=> //users dalna insert keliye aur data for the  
 
 //UPDATE (DB) ROUTE
 app.patch("/user/:id",(req,res)=>{
-  
+  let {id}=req.params;
+  let {password: formpass,username: newusername}=req.body;
+  let q=`select * from user where id='${id}'`;
+  try{
+    connection.query(q,(err,result)=>{
+      if (err) throw err;
+      let user=result[0];
+      if(formpass!=user.password){
+        res.send("wrong password");
+      } else{
+        let q2=`update user set username=${newusername} ehre id='${id}'`;
+        connection.query(q2,(err,result)=>{
+          if(err)throw err;
+          res.redirect("/user");
+        })
+      }
+      // res.render("edit.ejs",{user});
+    });
+  } catch(err){
+    console.log(err);
+    res.send("some error");
+  }
 })
 
 app.listen("8080",()=>{
